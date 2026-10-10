@@ -1,5 +1,5 @@
 {
-    flake.nixosModules.base = {lib, ...}: {
+    flake.preservationConfigurations.Lambda = {lib, ...}: {
         preservation = {
             enable = true;
 

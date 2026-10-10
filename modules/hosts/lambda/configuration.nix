@@ -8,6 +8,10 @@
     flake.nixosModules.hostLambda = { config, pkgs, ... }: {
         imports = [
             self.nixosModules.desktop
+
+            # disk partitions and preservation
+            self.diskoConfigurations.Lambda
+            self.preservationConfigurations.Lambda
         ];
 
         # Use the systemd-boot EFI boot loader.
