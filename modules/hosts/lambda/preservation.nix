@@ -5,7 +5,7 @@
 
             preserveAt."/persistent" = {
                 files = [
-                    { file = "/etc/machine-id"; initrd = true; }
+                    { file = "/etc/machine-id"; ininitrd = true; }
                 ];
                 
                 directories = [
