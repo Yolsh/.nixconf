@@ -10,6 +10,7 @@
             self.nixosModules.desktop
 
             # disk partitions and preservation
+            inputs.disko.nixosModules.disko
             self.diskoConfigurations.Lambda
             self.preservationConfigurations.Lambda
         ];
