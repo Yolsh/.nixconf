@@ -4,7 +4,7 @@
 
         disko.devices = {
             disk.main = {
-                device = "/dev/disk/by-id/mmc-MMC64G_0x00362da9";
+                device = "/dev/disk/by-id/ata-APPLE_SSD_SM0256G_S2XVNY0H962731";
                 type = "disk";
                 content = {
                     type = "gpt";
