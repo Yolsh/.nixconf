@@ -10,6 +10,8 @@
 
         nixpkgs.config.allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
         boot.blacklistedKernelModules = [ "b43" "bcma" "ssb" "brcmsmac" ];
+        boot.initrd.systemd.supressedUnits = [ "systemd-machine-id-commit.service" ];
+        systemd.suppressedSystemUnits = [ "systemd-machine-id-commit.service" ];
         
 
         swapDevices = [ ];
