@@ -9,7 +9,7 @@
         boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
         nixpkgs.config.allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
-        boot.blacklistedKernelModules = [ "b43" "bcma" "ssb" "brcmsmac" ]
+        boot.blacklistedKernelModules = [ "b43" "bcma" "ssb" "brcmsmac" ];
         
 
         swapDevices = [ ];
