@@ -3,10 +3,14 @@
         imports = [
             (modulesPath + "/installer/scan/not-detected.nix")
         ];
-        boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+        boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "wl" ];
         boot.initrd.kernelModules = [ ];
         boot.kernelModules = [ "kvm-intel" ];
-        boot.extraModulePackages = [ ];
+        boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+
+        nixpkgs.config.allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
+        boot.blacklistedKernelModules = [ "b43" "bcma" "ssb" "brcmsmac" ]
+        
 
         swapDevices = [ ];
 
