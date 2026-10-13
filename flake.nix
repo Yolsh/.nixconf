@@ -15,7 +15,7 @@
 
         persistence = {
             url = "github:nix-community/preservation";
-            inputs.nixpkgs.follows "";
+            inputs.nixpkgs.follows = "";
             inputs.home-manager.follows = "";
         };
     };
