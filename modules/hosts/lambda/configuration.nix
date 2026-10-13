@@ -12,8 +12,8 @@
             # disk partitions and preservation
             inputs.disko.nixosModules.disko
             self.diskoConfigurations.Lambda
-            inputs.preservation.nixosModules.preservation
-            self.preservationConfigurations.Lambda
+            inputs.persistence.nixosModules.persistence
+            self.persistanceConfigurations.Lambda
         ];
 
         # Use the systemd-boot EFI boot loader.
