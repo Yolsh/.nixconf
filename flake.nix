@@ -13,8 +13,8 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        persistence = {
-            url = "github:nix-community/preservation";
+        impermanence = {
+            url = "github:nix-community/impermanence";
             inputs.nixpkgs.follows = "";
             inputs.home-manager.follows = "";
         };
