@@ -1,29 +1,28 @@
 {
     flake.preservationConfigurations.Lambda = {lib, ...}: {
-        preservation = {
+      environment.persistence."/persistent" = {
             enable = true;
-
-            preserveAt."/persistent" = {
-                files = [
-                    { file = "/etc/machine-id"; inInitrd = true; }
-                ];
+            hideMounts = true;
+    
+            files = [
+                "/etc/machine-id"
+             ];
                 
+             directories = [
+                "/var/lib/timers"
+                "/var/lib/nixos"
+                "/var/log"
+                "/var/lib/bluetooth"
+                 "/etc/NetworkManager/system-connections"
+                 "/tmp"
+             ];
+    
+             users.yolsh = {
+                files = [];
                 directories = [
-                    "/var/lib/timers"
-                    "/var/lib/nixos"
-                    "/var/log"
-                    "/var/lib/bluetooth"
-                    "/etc/NetworkManager/system-connections"
-                    "/tmp"
+                    ".nixconf"
+                    "Documents"
                 ];
-
-                users.yolsh = {
-                    files = [];
-                    directories = [
-                        ".nixconf"
-                        "Documents"
-                    ];
-                };
             };
         };
     };
