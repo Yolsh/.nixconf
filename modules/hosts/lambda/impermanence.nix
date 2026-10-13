@@ -13,8 +13,8 @@
                 "/var/lib/nixos"
                 "/var/log"
                 "/var/lib/bluetooth"
-                 "/etc/NetworkManager/system-connections"
-                 "/tmp"
+                "/etc/NetworkManager/system-connections"
+                "/tmp"
              ];
     
              users.yolsh = {

@@ -51,7 +51,7 @@
         users.users."yolsh" = {
             isNormalUser = true;
             description = "Josh";
-            initialPassword = "12345";
+            hashedPasswordFile = "/persistent/passwd";
             extraGroups = [ "networkmanager" "wheel" ];
             packages = with pkgs; [
                 ghostty
