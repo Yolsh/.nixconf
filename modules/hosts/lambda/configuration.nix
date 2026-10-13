@@ -51,6 +51,7 @@
         users.users."yolsh" = {
             isNormalUser = true;
             description = "Josh";
+            initialPassword = "12345";
             extraGroups = [ "networkmanager" "wheel" ];
             packages = with pkgs; [
                 ghostty
