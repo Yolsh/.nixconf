@@ -13,7 +13,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        preservation.url = "github:nix-community/preservation";
+        persistence = {
+            url = "github:nix-community/preservation";
+            inputs.nixpkgs.follows "";
+            inputs.home-manager.follows = "";
+        };
     };
 
     outputs = inputs: let
