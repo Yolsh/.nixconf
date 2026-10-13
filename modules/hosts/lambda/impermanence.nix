@@ -1,5 +1,5 @@
 {
-    flake.preservationConfigurations.Lambda = {lib, ...}: {
+    flake.impermanenceConfigurations.Lambda = {lib, ...}: {
       environment.persistence."/persistent" = {
             enable = true;
             hideMounts = true;
