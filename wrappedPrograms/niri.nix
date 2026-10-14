@@ -12,7 +12,8 @@
 				input = {
 					keyboard = {
 						xkb = {
-							layout = "gb";
+							layout = "us";
+							variant = "mac";
 							options = "ctrl:nocaps";
 						};
 						numlock = _:{};

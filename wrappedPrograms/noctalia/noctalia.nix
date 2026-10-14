@@ -1,5 +1,5 @@
 { self, inputs, ... }: let
-    wallpaper = ./images/space_pixels.nix;
+    wallpaper = ./images/space_pixels.png;
     profile = ./images/Y.png;
 in
 {
@@ -402,7 +402,7 @@ in
                 screen_time_enabled = false;
                 settings_show_advanced = true;
                 settings_window_translucent = false;
-                setup_wizard_enabled = true;
+                setup_wizard_enabled = false;
                 shared_gl_context = true;
                 show_location = true;
                 telemetry_enabled = false;

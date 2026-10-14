@@ -1,5 +1,5 @@
-{ self, ... }: {
-    flake.nixosModules.desktop = {pkgs, ...}: let
+{ self, inputs, ... }: {
+    flake.nixosModules.desktop = { pkgs, ... }: let
         selfpkgs = self.packages."${pkgs.system}";
     in {
         imports = [
@@ -12,7 +12,8 @@
         programs.niri.package = selfpkgs.niri;
 
         environment.systemPackages = [
-            #terminal
+            selfpkgs.ghostty
+            inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         ];
 
         fonts.packages = with pkgs; [

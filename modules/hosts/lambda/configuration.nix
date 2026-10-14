@@ -8,6 +8,8 @@
     flake.nixosModules.hostLambda = { config, pkgs, ... }: {
         imports = [
             self.nixosModules.desktop
+            self.nixosModules.shell
+            self.nixosModules.dev
 
             # disk partitions and preservation
             inputs.disko.nixosModules.disko
@@ -28,8 +30,8 @@
         services.desktopManager.gnome.enable = true;
 
         services.xserver.xkb = {
-            layout = "gb";
-            variant = "";
+            layout = "us";
+            variant = "mac";
         };
         console.keyMap = "uk";
         services.printing.enable = true;
@@ -53,13 +55,9 @@
             description = "Josh";
             hashedPasswordFile = "/persistent/passwd";
             extraGroups = [ "networkmanager" "wheel" ];
-            packages = with pkgs; [
-                ghostty
-            ];
         };
 
         programs = {
-            firefox.enable = true;
             vscode = {
                 enable = true;
                 extensions = with pkgs.vscode-extensions; [
@@ -73,7 +71,6 @@
 
         environment.systemPackages = with pkgs; [
             wget
-            git
             (python3.withPackages(pypkgs: with pypkgs; [
                 beautifulsoup4
                 cryptography

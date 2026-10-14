@@ -21,6 +21,7 @@
                 files = [];
                 directories = [
                     ".nixconf"
+                    ".config/zen" # this config eventually be merged to this repo
                     "Documents"
                 ];
             };
