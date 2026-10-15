@@ -75,6 +75,7 @@
                 beautifulsoup4
                 cryptography
                 pillow
+                pycryptodome
             ]))
         ];
         
