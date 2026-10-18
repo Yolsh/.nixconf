@@ -11,12 +11,9 @@
     };
 
     flake.nixosModules.neovim = { pkgs, ... }: {
+        imports = [
+            inputs.nvf.nixosModules.default
+        ];
         environment.systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.neovim ];
-    };
-
-    flake.nixosConfigurations.neovim = {
-        programs.nvf = {
-            enable = true;
-        };
     };
 }

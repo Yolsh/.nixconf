@@ -10,7 +10,6 @@
             self.nixosModules.desktop
             self.nixosModules.shell
             self.nixosModules.dev
-            inputs.nvf.nixosModules.default
             self.nixosModules.neovim
 
             # disk partitions and preservation
