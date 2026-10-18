@@ -3,7 +3,7 @@
         nvim-config = inputs.nvf.lib.neovimConfiguration {
             inherit pkgs;
             modules = [
-                ./nvim-config.nix
+                ./_nvim-config.nix
             ];
         };
     in {
@@ -11,9 +11,12 @@
     };
 
     flake.nixosModules.neovim = { pkgs, ... }: {
-        programs.neovim = {
+        environment.systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.neovim ];
+    };
+
+    flake.nixosConfigurations.neovim = {
+        programs.nvf = {
             enable = true;
-            package = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
         };
     };
 }
