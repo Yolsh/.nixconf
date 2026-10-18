@@ -10,6 +10,7 @@
             self.nixosModules.desktop
             self.nixosModules.shell
             self.nixosModules.dev
+            self.nixosModules.neovim
 
             # disk partitions and preservation
             inputs.disko.nixosModules.disko
@@ -63,6 +64,7 @@
                 extensions = with pkgs.vscode-extensions; [
                     bbenoist.nix
                     ms-python.python
+		    ms-toolsai.jupyter
                 ];
             };
         };
@@ -76,6 +78,15 @@
                 cryptography
                 pillow
                 pycryptodome
+		requests
+		jupyterlab
+		notebook
+		matplotlib
+		ipykernel
+		pip
+		numpy
+		pandas
+		scikit-learn
             ]))
         ];
         
