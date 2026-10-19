@@ -15,7 +15,14 @@
 
     flake.wrappersModules.tmux = { pkgs, ... }: {
         baseIndex = 1;
+        baketop = 3;
         prefix = "C-s";
-        shell = self.packages.${pkgs.stdenv.hostPlatform.system}.fish;
+        configBefore = ''
+            set -g status-position top
+            set -g @tmux-gruvbox 'dark'
+        '';
+        plugins = with pkgs; [
+            tmuxPlugins.gruvbox
+        ];
     };
 }
