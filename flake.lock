@@ -54,6 +54,48 @@
         "type": "github"
       }
     },
+    "hjem": {
+      "inputs": {
+        "nixpkgs": [
+          "hjem-rum",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789234255,
+        "narHash": "sha256-0nvWuRbgL4GEKpR8Y4wsB3kmsVgyd0cW8kLHc2BqlTc=",
+        "owner": "feel-co",
+        "repo": "hjem",
+        "rev": "e5e30b4320a8cbcd6cdfc65f044763669a8f0363",
+        "type": "github"
+      },
+      "original": {
+        "owner": "feel-co",
+        "repo": "hjem",
+        "type": "github"
+      }
+    },
+    "hjem-rum": {
+      "inputs": {
+        "hjem": "hjem",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789576270,
+        "narHash": "sha256-ntcojKoFfndHu9/cw6zRyan2AECyxMwJ0e1Qr7a+m40=",
+        "owner": "snugnug",
+        "repo": "hjem-rum",
+        "rev": "4194064c687bf6ca7a79cbe127cbe5a3f51ed5d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "snugnug",
+        "repo": "hjem-rum",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -213,6 +255,11 @@
       "inputs": {
         "disko": "disko",
         "flake-parts": "flake-parts",
+        "hjem": [
+          "hjem-rum",
+          "hjem"
+        ],
+        "hjem-rum": "hjem-rum",
         "impermanence": "impermanence",
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs",

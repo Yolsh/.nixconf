@@ -11,6 +11,8 @@
             self.nixosModules.shell
             self.nixosModules.dev
             self.nixosModules.neovim
+            self.nixosModules.yolsh
+            self.nixosModules.tmux
 
             # disk partitions and preservation
             inputs.disko.nixosModules.disko
@@ -50,13 +52,6 @@
 
         # Enable touchpad support (enabled default in most desktopManager).
         # services.libinput.enable = true;
-
-        users.users."yolsh" = {
-            isNormalUser = true;
-            description = "Josh";
-            hashedPasswordFile = "/persistent/passwd";
-            extraGroups = [ "networkmanager" "wheel" ];
-        };
 
         programs = {
             vscode = {
