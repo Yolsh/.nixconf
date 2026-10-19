@@ -15,7 +15,6 @@
 
     flake.wrappersModules.tmux = { pkgs, ... }: {
         baseIndex = 1;
-        baketop = 3;
         prefix = "C-s";
         configBefore = ''
             set -g status-position top
